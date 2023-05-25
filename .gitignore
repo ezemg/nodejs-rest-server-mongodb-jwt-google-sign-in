@@ -1,4 +1,4 @@
 node_modules/
 .env
 .prettierrc
-.client_secret_575724753939-9u619uajmdbdq6d7hdtta5pmhv8gvgfe.apps.googleusercontent.com.json/
+google_secret.json
