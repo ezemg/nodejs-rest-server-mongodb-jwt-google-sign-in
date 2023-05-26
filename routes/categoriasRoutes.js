@@ -18,7 +18,6 @@ const {
 
 const router = Router();
 
-// Listar todas las categorias - publico
 router.get('/', obtenerCategorias);
 
 // Obtener una categoria - publico
