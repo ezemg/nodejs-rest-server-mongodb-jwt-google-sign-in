@@ -11,6 +11,7 @@ class Server {
       auth: '/api/auth',
       usuarios: '/api/usuarios',
       categorias: '/api/categorias',
+      productos: '/api/productos',
     };
 
     // Conectar a DB
@@ -47,6 +48,8 @@ class Server {
       this.paths.categorias,
       require('../routes/categoriasRoutes.js')
     );
+
+    this.app.use(this.paths.productos, require('../routes/productosRoutes.js'));
   }
 
   listen() {
