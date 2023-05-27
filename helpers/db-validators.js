@@ -52,10 +52,15 @@ const existeProductoPorId = async (id) => {
   }
 };
 
+const isMongoId = (id) => {
+  return mongoose.Types.ObjectId.isValid(id);
+};
+
 module.exports = {
   esRoleValido,
   emailExiste,
   existeUsuarioPorId,
   existeCategoriaPorId,
   existeProductoPorId,
+  isMongoId,
 };
