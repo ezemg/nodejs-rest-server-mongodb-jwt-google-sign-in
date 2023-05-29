@@ -56,6 +56,16 @@ const isMongoId = (id) => {
   return mongoose.Types.ObjectId.isValid(id);
 };
 
+const coleccionesPermitidas = (coleccion = '', colecciones = []) => {
+  if (!colecciones.includes(coleccion)) {
+    throw new Error(
+      `La coleccion ${coleccion} no es permitida. Las colecciones permitidas son ${colecciones}`
+    );
+  }
+
+  return true;
+};
+
 module.exports = {
   esRoleValido,
   emailExiste,
@@ -63,4 +73,5 @@ module.exports = {
   existeCategoriaPorId,
   existeProductoPorId,
   isMongoId,
+  coleccionesPermitidas,
 };

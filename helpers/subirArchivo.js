@@ -8,6 +8,10 @@ const subirArchivo = (
   carpeta = ''
 ) => {
   return new Promise((resolve, reject) => {
+    if (!files) {
+      return reject(`No cargaste ningun archivo`);
+    }
+
     const { archivo } = files;
 
     const nombreCortado = archivo.name.split('.');
@@ -20,7 +24,6 @@ const subirArchivo = (
 
     const nombreTemp = uuidv4() + '.' + ext;
     const uploadPath = path.join(__dirname, '../uploads/', carpeta, nombreTemp);
-    console.log(uploadPath);
 
     archivo.mv(uploadPath, (err) => {
       if (err) {
